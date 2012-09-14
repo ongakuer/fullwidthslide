@@ -2,22 +2,22 @@
 	$.fn.extend({   
 		fullwidthslide:function(_arg){
 			var _this = $(this),
-				domName = _this.selector,
-				container = _arg.container,
-				imgWidth = _arg.singleWidth ,
-				timeOut = _arg.timeOut,
-				slideSpeed = _arg.speed || 500,
-				prevBtn = _arg.prevBtn,
-				nextBtn = _arg.nextBtn,
+				domName 	= _this.selector,
+				container 	= _arg.container,
+				imgWidth 	= _arg.singleWidth ,
+				timeOut 	= _arg.timeOut,
+				slideSpeed 	= _arg.speed || 500,
+				prevBtn 	= _arg.prevBtn,
+				nextBtn 	= _arg.nextBtn,
 				slideFadeTo = _arg.fadeTo ||0.5,
-				easeIn =   _arg.easeIn || "swing" ,  
-    			easeOut = _arg.easeOut || "swing" ,
-				$slideBox = _this.find(container),
+				easeIn 		= _arg.easeIn || "swing" ,  
+				easeOut 	= _arg.easeOut || "swing" ,
+				$slideBox 	= _this.find(container),
 				$slideBoxDOMs = $slideBox.children(),
 				childrenNum = $slideBoxDOMs.length,
-				slideLeft = 0,
-				slideLock = false,
-				allowNext = false,
+				slideLeft 	= 0,
+				slideLock 	= false,
+				allowNext 	= false,
 				windowsWidth,
 				initLeft,
 				timer;
@@ -39,11 +39,8 @@
 			}
 
 			function initWidth(){
-
-
 				windowsWidth = $(window).width();
 				initLeft = windowsWidth/2 -1.5*imgWidth;
-
 
 				$(domName).css({
 					position:"relative",
@@ -51,7 +48,6 @@
 					width: windowsWidth
 				})
 				
-
 				$slideBox.css({
 					marginLeft: initLeft+"px"
 				})
@@ -88,6 +84,7 @@
 	 				  			if(slideFadeTo){
 									$slideBox.children().eq(1).stop(true,true).fadeTo(100,1);
 								}
+
 								$slideBox.children().eq(1).css({"z-index": "100"});
 								slideLock = false;
 								
